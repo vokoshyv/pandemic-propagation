@@ -14,7 +14,7 @@ myChart = new Chart(myChart, {
     data: {
         labels: [],
         datasets: [{
-            label: '# of Concurrently Sick People',
+            label: '# of Concurrently Sick People (cases/day)',
             data: [],
             backgroundColor: [],
             pointBorderColor: [],
