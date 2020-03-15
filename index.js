@@ -73,7 +73,7 @@ function draw (grid) {
             ctx.rect(x, y, CELL_WIDTH, CELL_WIDTH);
             if (col === 2) {
                 // immune - green
-                ctx.fillStyle = '#00FF00';
+                ctx.fillStyle = '#32CD32';
                 ctx.fill();
                 countPeople(col);
             }
@@ -91,7 +91,7 @@ function draw (grid) {
             }
             if (col >= 24 && col <= 28) {
                 // infected - yellow
-                ctx.fillStyle = '#FFFF00';
+                ctx.fillStyle = '#ff9900';
                 ctx.fill();
                 countPeople(col);
             }

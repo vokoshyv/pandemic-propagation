@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="page">
-        <h1>Pandemic Propagation</h1>
+        <h1>Pandemic Propagation (made at <a href="https://www.outco.io/" target="_blank">Outco</a>)</h1>
     </div>
     <div class="container">
         <div id="grid">
@@ -18,11 +18,19 @@
             </div>
 
             <div id="fps-container">
-                <p>Turns Per Second:</p>
-                <input type="range" min="1" max="30" value="24" id="fps-slider">
-                <span id="fps-display">24</span>
+                <div id="legend-col1">&nbsp&nbspLegend:
+                    <span style="color:#24A0ED;">Healthy</span>
+                    <span style="color:#ff9900;">Infected</span>
+                    <span style="color:#FF0000;">Sick</span>
+                    <span style="color:#696969;">Dead</span>
+                    <span style="color:#32CD32;">Immune</span>
+                </div>
+                <div id="legend-col2">
+                    <p>Turns Per Second:</p>
+                    <input type="range" min="1" max="30" value="24" id="fps-slider">
+                    <span id="fps-display">24</span>
+                </div>
             </div>
-
         </div>
         <div id="settings">
 
@@ -58,7 +66,7 @@
             </div>
 
             <div id="settings-col2">
-                <p>Handwashing Efficacy?<br>(Maximum effectieness is 80%):</p>
+                <p>Handwashing Efficacy<br>(Maximum effectieness is 80%):</p>
                 <input type="range" min="0" max="80" value="0" id="handwash-slider">
                 <span id="handwash-display">0%</span>
 
@@ -77,6 +85,89 @@
 
 
 
+        </div>
+
+        <div class="details">
+            <h2>More Info:</h2>
+
+            <h4>Assumptions</h4>
+            <p>
+                This model assumes a death rate of 2.5169%. This is based off of
+                data from <a href="https://www.cdc.gov/coronavirus/2019-ncov/cases-in-us.html">CDC</a>
+                that, as of March 13th, reported 1,629 cases and 41 deaths.
+                Those of you visiting the CDC's site some time after March 13th
+                will see different numbers. Is this the most accurrate death
+                rate? Absolutely not. That comes in the months or years after
+                a disease has run its course.
+            </p>
+
+            <p>
+                Another assumption is a sick time of 3 weeks (21 days). This is
+                based off of <a href="https://www.health.harvard.edu/diseases-and-conditions/coronavirus-resource-center">Harvard Resource Center</a>,
+                who states It depends on how sick you get. Those with mild cases
+                appear to recover within one to two weeks. With severe cases,
+                recovery can take six weeks or more." They are compiling
+                information from the <a href="https://www.cdc.gov/">CDC</a>,
+                <a href="https://www.who.int/">WHO</a>, and
+                <a href="https://coronavirus.jhu.edu/map.html">John Hopkins University COVID-19 Interactive Map</a>.
+            </p>
+
+            <p>
+                Disease transmission here is done via checking proximity between
+                squares, and then performing a probability check based off of the
+                distance. Those probabilities for transmission go as follows:
+                Directly adjacent (80%), two squares away (50%), three squares
+                away (25%).
+            </p>
+
+            <p>
+                In this model, we also allow for an individual to become infected
+                and still have a chance to wash their hands (therby becoming
+                healthy) once again. We're assumming an infected period of five
+                days before this individual falls ill. Each day the individual
+                is infected, there is a probability that the person can become
+                healthy. This probability can be adjusted in the Handwashing
+                Efficacy slider.
+            </p>
+
+            <h4>About</h4>
+
+            <p>
+                Hello, I'm Ron, CTO at <a href="https://www.outco.io/">Outco</a>.
+                Outco is a Software Engineering Career Accelerator that guides
+                software engineers of all seniority to earn great jobs. (<=almost
+                verbatim from the landing page on our website) :)
+            </p>
+
+            <p>
+                During a Tech Level Up session on March 13th, I began to build
+                this model in light of recent events. Much news has come out
+                about this <a href="https://www.google.com/search?q=coronavirus+curve">COVID-19 Curve</a>
+                and I wanted to explore the possibility of modeling what ifs.
+            </p>
+
+            <p>
+                What if we were to travel and go about our daily lives at our
+                current pace?
+            </p>
+
+            <p>
+                What if we began to isolate and reduced our interaction by 50%?
+                75%?
+            </p>
+
+            <p>
+                Please have fun with this model. We could all use some of that.
+                These are extraordinary times. Call or web conference your
+                friends/families. Also, keep yourselves informed.
+            </p>
+
+            <p><a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html">Center for Disease Control</a></p>
+            <p><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019">World Health Organization</a></p>
+
+            <h4>Interested in Source Code?</h4>
+
+            <p><a href="https://github.com/vokoshyv/pandemic-propagation">GitHub</a></p>
         </div>
     </div>
     <div>
